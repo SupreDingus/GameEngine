@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="WinMain">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="XxxExperimentsxxX">
+      <UniqueIdentifier>{b8900a44-e6a3-4a86-a4a4-0608ed5e1e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{bf52549c-8622-4940-8145-7f25d8dd5bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Graphics">
+      <UniqueIdentifier>{ebe40bd5-6965-44e2-aa57-53173cb3b9b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Core Engine">
+      <UniqueIdentifier>{bb34ce40-8fa5-4622-87cf-aa7df257a5f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Window">
+      <UniqueIdentifier>{70d49e78-801d-4d2b-8e6b-b27e4d6381ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Math">
+      <UniqueIdentifier>{cdea57bc-1811-4800-9157-a5c2282eebcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Systems">
+      <UniqueIdentifier>{3cd37122-6fc4-497f-a9a6-c1327a06f14f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Core Engine\Messaging">
+      <UniqueIdentifier>{f1771cfb-8895-40ff-82a4-22e0cfebae2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Serialization">
+      <UniqueIdentifier>{92941caa-b8dd-4218-8e59-0a8f85322458}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\ObjectFactory">
+      <UniqueIdentifier>{2e25e413-4ef2-4965-9ae3-2aad79fb5b8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{7b77c3f9-f464-4f44-bb27-e23af5af25b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ArchetypedObjects">
+      <UniqueIdentifier>{42d3d764-6d4d-4395-91d6-fef714b000e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Supplements">
+      <UniqueIdentifier>{6291d397-69ec-4f01-837f-d79534daa0d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Input">
+      <UniqueIdentifier>{785b7175-8c4a-4956-8e99-6046bf50f577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Physics">
+      <UniqueIdentifier>{942357fb-f347-4f80-8fcc-baaf323efe12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\DebugDraw">
+      <UniqueIdentifier>{f32b030f-c751-448b-a97e-d1811d64cd4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ComponentBases">
+      <UniqueIdentifier>{f3c4f8bd-b44c-4787-8e5c-ab1cb1487f18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\ParticleEmitter">
+      <UniqueIdentifier>{55377ced-64b3-4641-aba5-e25f70f092f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Third-Party">
+      <UniqueIdentifier>{653d0b5a-f3e8-46e4-a1aa-6496908c54f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Systems\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>WinMain</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsSystem.cpp">
+      <Filter>Systems\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="OBALCore.cpp">
+      <Filter>Systems\Core Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageRecipientList.cpp">
+      <Filter>Systems\Core Engine\Messaging</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteSource.cpp">
+      <Filter>Systems\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="BackBufferSurfaceSprite.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureSource.cpp">
+      <Filter>Systems\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="FilePath.cpp">
+      <Filter>Supplements</Filter>
+    </ClCompile>
+    <ClCompile Include="HUDSprite.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory.cpp">
+      <Filter>Systems\ObjectFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultText.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectLight.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Systems\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatableSprite.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraController.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Systems\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Orientation.cpp">
+      <Filter>Systems\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>Systems\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Resolution.cpp">
+      <Filter>Systems\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Body.cpp">
+      <Filter>Systems\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDraw.cpp">
+      <Filter>Systems\DebugDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="VMath.cpp">
+      <Filter>Systems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectComposition.cpp">
+      <Filter>Systems\ObjectFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Serialize.cpp">
+      <Filter>Systems\Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Systems\ParticleEmitter</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleEmitter.cpp">
+      <Filter>Systems\ParticleEmitter</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleManager.cpp">
+      <Filter>Systems\ParticleEmitter</Filter>
+    </ClCompile>
+    <ClCompile Include="json\jsoncpp.cpp">
+      <Filter>Third-Party</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Experimental Stuff.txt">
+      <Filter>XxxExperimentsxxX</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graphics.h">
+      <Filter>Systems\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXIncludes.h">
+      <Filter>Systems\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineBases.h">
+      <Filter>Systems\Core Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsIncludes.h">
+      <Filter>Systems\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsSystem.h">
+      <Filter>Systems\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemsBase.h">
+      <Filter>Systems\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers.h">
+      <Filter>Systems\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Precompiled.h">
+      <Filter>Systems\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="VMath.h">
+      <Filter>Systems\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexTypes.h">
+      <Filter>Systems\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectLinkedList.h">
+      <Filter>Systems\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Heirarchy.h">
+      <Filter>Systems\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="OBALCore.h">
+      <Filter>Systems\Core Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Systems\Core Engine\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageRecipientList.h">
+      <Filter>Systems\Core Engine\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="MessagingTransmitter.h">
+      <Filter>Systems\Core Engine\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteSource.h">
+      <Filter>Systems\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BackBufferSurfaceSprite.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureSource.h">
+      <Filter>Systems\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="HUDSprite.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="FilePath.h">
+      <Filter>Supplements</Filter>
+    </ClInclude>
+    <ClInclude Include="Factory.h">
+      <Filter>Systems\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultText.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectLight.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Systems\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatableSprite.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraController.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyDefines.h">
+      <Filter>Systems\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentHeaderList.h">
+      <Filter>Systems\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Body.h">
+      <Filter>Systems\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Systems\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Orientation.h">
+      <Filter>Systems\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>Systems\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Resolution.h">
+      <Filter>Systems\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDraw.h">
+      <Filter>Systems\DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectComposition.h">
+      <Filter>Systems\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentTypeIds.h">
+      <Filter>ComponentBases</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentCreator.h">
+      <Filter>ComponentBases</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>ComponentBases</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialize.h">
+      <Filter>Systems\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Systems\ParticleEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleEmitter.h">
+      <Filter>Systems\ParticleEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleManager.h">
+      <Filter>Systems\ParticleEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>Third-Party</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json-forwards.h">
+      <Filter>Third-Party</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

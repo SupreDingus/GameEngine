@@ -1,0 +1,112 @@
+//******************************GRAPHICS******************************//
+IN THIS EXPERIMENT, THIS RENDER FUNCTION WAS MODIFIED SO THE BACK BUFFER FADES FROM BLUE TO BLACK AND BACK IN 20 FRAMES
+
+int bluex = 0;
+int bluey = 40;
+int bluez = 100;
+int blackx = 0;
+int blacky = 0;
+int blackz = 0;
+int framecount = 20;
+bool convert = true;
+int conversionx = bluex / framecount;
+int conversiony = bluey / framecount;
+int conversionz = bluez / framecount;
+bool xdone = false;
+bool ydone = false;
+bool zdone = false;
+int colorx = bluex;
+int colory = bluey;
+int colorz = bluez;
+
+// this is the function used to render a single frame
+void render_frame(void)
+{
+  //CHECK IF ANY COORDINATES HAVE REACHED THEIR COLOR VALUES YET AND SET THOSE WHO HAVE TO "TRUE"
+  if (convert == true)
+  {
+    if (colorx == blackx)
+    {xdone = true;
+    }
+    if (colory == blacky)
+    {ydone = true;
+    }
+    if (colorz == blackz)
+    {zdone = true;
+    }
+
+    //IF ALL COORDINATES HAVE REACHED THEIR COLOR VALUES CONVERT BACK TO BLUE, RESET COORDINATE DONES
+    if (xdone == true && ydone == true && zdone == true)
+    {
+      convert = false;
+      xdone = false;
+      ydone = false;
+      zdone = false;
+    }
+  }
+  if (convert == false)
+  {
+    if (colorx == bluex)
+    {xdone = true;
+    }
+    if (colory == bluey)
+    {ydone = true;
+    }
+    if (colorz == bluez)
+    {zdone = true;
+    }
+
+    //IF ALL COORDINATES HAVE REACHED THEIR COLOR VALUES CONVERT BACK TO BLACK, RESET COORDINATE DONES
+    if (xdone == true && ydone == true && zdone == true)
+    {
+      convert = true;
+      xdone = false;
+      ydone = false;
+      zdone = false;
+    }
+  }
+ 
+  // clear the window to a deep blue
+  d3ddev->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(colorx, colory, colorz), 1.0f, 0);
+
+  if (convert == true)
+  {
+    if (xdone == false)
+    {
+      colorx -= conversionx;
+    }
+    if (ydone == false)
+    {
+      colory -= conversiony;
+    }
+    if (zdone == false)
+    {
+      colorz -= conversionz;
+    }
+  }
+  if (convert == false)
+  {
+    if (xdone == false)
+    {
+      colorx += conversionx;
+    }
+    if (ydone == false)
+    {
+      colory += conversiony;
+    }
+    if (zdone == false)
+    {
+      colorz += conversionz;
+    }
+  }
+
+  
+
+  d3ddev->BeginScene();    // begins the 3D scene
+
+                           // do 3D rendering on the back buffer here
+
+  d3ddev->EndScene();    // ends the 3D scene
+
+  d3ddev->Present(NULL, NULL, NULL, NULL);    // displays the created frame
+} // END render_frame()

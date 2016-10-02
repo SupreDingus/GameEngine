@@ -1,0 +1,93 @@
+#pragma once
+#include "GameObjectComposition.h"
+#include "SystemsBase.h"
+#include "KeyDefines.h"
+
+namespace OBALFramework
+{
+  class KeyState
+  {
+  public:
+    KeyState(unsigned int key) { Key = key; };
+    ~KeyState() {};
+
+    unsigned int Key;
+    bool Pressed = false;
+    bool Released = false;
+    bool Down = false;
+    bool Up = true;
+  };
+
+
+  // The input manager takes windows events and converts them so held buttons can be detected among other things.
+  class InputManager : public ISystem
+  {
+  public:
+    friend class Keys;
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****CONSTRUCTOR-DESTRUCTOR***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    InputManager();
+    ~InputManager();
+
+    ///Name of the system is FACTORY.
+    virtual std::string GetName() { return "INPUTMGR"; }
+
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****SYSTEM INITIALIZATIONS***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    void Initialize();
+
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****SYSTEM UPDATE***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    ///Update the factory, destroying dead objects.
+    virtual void Update(float dt);
+
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****SYSTEMS MESSAGING***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    ///Message Interface see Message.h
+    virtual void ThrowMessage(Message * message);
+
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****COMPONENT REGISTRATION***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    // Register all Components that this system will handle and need upon creation an initialization
+    void RegisterAppropriateComponents();
+
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****KEY STATE ADDING***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    void AddKeyStateObject(unsigned int key);
+
+
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****KEY STATE CHECKING***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    bool KeyIsPressed(unsigned int inquirykey);
+    bool KeyIsReleased(unsigned int inquirykey);
+    bool KeyIsDown(unsigned int inquirykey);
+    bool KeyIsUp(unsigned int inquirykey);
+
+
+  private:
+    /////////////////////////////////////////////////////////////////////////////
+    /// *****CLEANUP***** ///
+    /////////////////////////////////////////////////////////////////////////////
+    void _DeleteKeyStates();
+
+    typedef std::map<unsigned int, KeyState*> KeyStateMap;
+    KeyStateMap _InputtedKeys;
+    
+  };
+
+
+  extern InputManager * INPUTMGR;
+}
