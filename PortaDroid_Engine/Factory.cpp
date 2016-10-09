@@ -57,8 +57,7 @@ namespace OBALFramework
   // Just Register for messages
   void GameObjectFactory::Initialize()
   {
-    // Register Components
-    RegisterAppropriateComponents();
+    
 
     if (MSGRECIPIENTS != NULL)
     {
@@ -156,6 +155,15 @@ namespace OBALFramework
     GiveComponentToObject("AnimatableSprite", gameObject);
 
     gameObject->Name = "AnimatableSprite";
+
+    return gameObject;
+  }
+  GOC * GameObjectFactory::CreateBackBufferSprite()
+  {
+    GOC * gameObject = CreateEmptyObject(true);
+    GiveComponentToObject("BackBufferSurfaceSprite", gameObject);
+
+    gameObject->Name = "BackBufferSurfaceSprite";
 
     return gameObject;
   }

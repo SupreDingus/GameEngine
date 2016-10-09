@@ -1,3 +1,41 @@
+/*****************************************************************************/
+/*!
+\file   Graphics.cpp
+\author Jullian Hyatt
+\par    email: jullian.h\@digipen.edu
+\par    DigiPen login: jullian.h
+\par    Course: GAM200
+\date   10/9/2016
+\brief
+This cpp file contains the Graphics ISystem function definitions.
+
+
+\par   Functions include:
++        Graphics
++        ~Graphics
++        Initialize
++        Init_Graphics
++        SetWindowProperties
++        GetAdapterInfo
++        ThrowMessage
++        Update
++        RegisterAppropriateComponents
++        DrawWorld
++        SetCameraMatrices
++        DrawDefaultTexts
++        DrawHUDSprites
++        DrawSprites
++        DrawAnimatableSprites
++        DrawBackBufferSurfaceSprites
++        DrawDirectLights
++        LoadTexture
++        LoadSpriteSource
++        WorldPositontoScreenPosition
++        ShutDownD3D
++        Debug_TrackCamera
+
+*/
+/*****************************************************************************/
 #include "Precompiled.h"
 #include "Graphics.h"
 #include "VertexTypes.h"
@@ -7,16 +45,22 @@
 #include "WindowsSystem.h"  //For Messaging stuff
 #include "InputManager.h"
 #include "CameraController.h"
+#include "Body.h"
 //#include "OBALCore.h"  //For CORE->...
 #include <sstream>
 
 #include "ComponentCreator.h"
+
+
+#include "EngineProofPresentationObject.h"
 
 #define GRAY_COLOR	0x00bfbfbf
 
 #define Ortho_Cam 1   // Change to 1 if the camera should be orthographic, which isn't fully implemented yet (otherwise Perspective)  
 #define CUSTOMVERTEX_Use 0  //Don't change.  This is used to test textures, which isn't fully implemented yet.
 #define Enable_Lighting 1
+#define Ortho_16_9_Aspect 900.0f
+#define Ortho_4_3_Aspect 300.0f
 
 
 namespace OBALFramework
@@ -25,7 +69,16 @@ namespace OBALFramework
   Graphics* GRAPHICS = NULL;
 
 
-  /// *****CONSTRUCTOR/DESTRUCTOR*****
+  /*****CONSTRUCTOR/DESTRUCTOR*****/
+  /****************************************************************************/
+  /*!
+  \brief
+    Constructor for the Graphics system
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   Graphics::Graphics()
   {
     OutputDebugStringA("CONSTRUCTING: Graphics\n");
@@ -48,6 +101,15 @@ namespace OBALFramework
 
     GRAPHICS = this;
   }
+  /****************************************************************************/
+  /*!
+  \brief
+    Destructor for the Graphics System
+
+  \return
+    N/A
+  */
+  /****************************************************************************/
   Graphics::~Graphics()
   {
     OutputDebugStringA("DESTRUCTING: Graphics\n");
@@ -100,6 +162,24 @@ namespace OBALFramework
 
 
   /// *****INITIALIZATION*****
+  /****************************************************************************/
+  /*!
+  \brief
+    Sets the variables for windows properties
+
+  \param p_e
+  The head pointer to the list
+
+  \param fmt
+  The format to print the list
+
+  \param dim
+  Length of the vector
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::SetWindowProperties(HWND hWnd, int screenWidth, int screenHeight)
   {
     OutputDebugStringA("SETTING WINDOW PROPERTIES: Graphics\n");
@@ -109,7 +189,15 @@ namespace OBALFramework
   }
 
 
-  //Initializes Direct3D
+  /****************************************************************************/
+  /*!
+  \brief
+    Initializes and sets all required DirectX devices and interfaces
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::Initialize()
   {
     OutputDebugStringA("INITIALIZING: Graphics\n");
@@ -242,18 +330,43 @@ namespace OBALFramework
       OutputDebugStringA("CAMERA IS A THING!!!\n");
     CurrentCamera->has(Transform)->Position = Vec3(0.0f, 0.0f, 15.0f);
 
+
+    /*
     GOC * animatablespritething;
     GOC * spritething;
+    GOC * spritething2;
     ////TEST SPRITE CREATION////
     spritething = FACTORY->CreateSprite();
-    animatablespritething = FACTORY->CreateAnimatableSprite();
+    FACTORY->GiveComponentToObject("Body", spritething);
+    spritething->has(Body)->IsStatic = true;
+    spritething->has(Transform)->Position = Vec3(0, 0, 0);
 
+    spritething2 = FACTORY->CreateSprite();
+    FACTORY->GiveComponentToObject("Body", spritething2);
+    spritething2->has(Body)->IsStatic = false;
+    spritething2->has(Transform)->Position = Vec3(0,1,0);
+
+    //animatablespritething = FACTORY->CreateAnimatableSprite();
     //spritething->has(Transform)->Position.x = -0;
+
+    */
+
+    GOC * presentationObject = FACTORY->CreateEmptyObject(true);
+    FACTORY->GiveComponentToObject("EngineProofPresentationObject", presentationObject);
 
 
   } // END initD3D()
 
 
+    /****************************************************************************/
+    /*!
+    \brief
+      Gets the computer's video adapter information
+
+    \return
+    N/A
+    */
+    /****************************************************************************/
   void Graphics::GetAdapterInfo()
   {
     OutputDebugStringA("GETTING VIDEO ADAPTER INFO: Graphics\n");
@@ -299,6 +412,15 @@ namespace OBALFramework
   }
 
 
+  /****************************************************************************/
+  /*!
+  \brief
+    Initializes the vertex buffer.
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::init_graphics(void)
   {
     
@@ -357,7 +479,20 @@ namespace OBALFramework
   }
 
 
-  // TESTING MESSAGING
+  /****************************************************************************/
+  /*!
+  \brief
+    Definition for the virtual ThrowMessage function.
+    Currently, this definition is used to test graphical properties and objects
+   
+  \param message
+    The message that was thrown.  This message can be any type of message and
+    must be sampled to determine whether this object cares about the message.
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::ThrowMessage(Message * message)
   {
     /*
@@ -426,7 +561,20 @@ namespace OBALFramework
   }
 
 
-  /// *****UPDATING*****
+  /*****UPDATING*****/
+  /****************************************************************************/
+  /*!
+  \brief
+    The definition for the virtual Update function.
+    This is the function that indicates an iteration of the game loop update has occured
+
+  \param dt
+    The amount of time that has passed since the last update
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::Update(float dt)
   {
     /// CLEAR Previous Buffers
@@ -457,6 +605,17 @@ namespace OBALFramework
 
   } // END Update()
 
+
+  /****************************************************************************/
+  /*!
+  \brief
+    The virtual function definition.
+    This is where components that are related to to this object/system are registered
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::RegisterAppropriateComponents()
   {
     // COMPONENT REGISTRATION
@@ -467,9 +626,22 @@ namespace OBALFramework
     RegisterComponent(BackBufferSurfaceSprite);
     RegisterComponent(DefaultText);
     RegisterComponent(Emitter);
+
+    RegisterComponent(EngineProofPresentationObject);
   }
   
 
+  /****************************************************************************/
+  /*!
+  \brief
+    Prepares the DirectX device for drawing of all graphical objects.
+    This includes setting the camera matricies and telling all objects with 
+      graphical components to draw themselves.
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::DrawWorld(void)
   {
 
@@ -521,6 +693,15 @@ namespace OBALFramework
   } // END DrawWorld()
 
 
+    /****************************************************************************/
+    /*!
+    \brief
+      Sets the camera matricies for drawing
+
+    \return
+    N/A
+    */
+    /****************************************************************************/
   void Graphics::SetCameraMatrices(void)
   {
     // Get the camera's position in space
@@ -553,8 +734,8 @@ namespace OBALFramework
 
 #if(Ortho_Cam)
     D3DXMatrixOrthoRH(&matProjection,
-                      ScreenSize.x,     // the Screen width
-                      ScreenSize.y,     // the Screen Height
+                      ScreenSize.x / 900.0f * CurrentCamera->has(Camera)->OrthoProjSize,     // the Screen width
+                      ScreenSize.y / 900.0f * CurrentCamera->has(Camera)->OrthoProjSize,     // the Screen Height
                       CurrentCamera->has(Camera)->NearPlane,         // the near view-plane
                       CurrentCamera->has(Camera)->FarPlane);         // the far view-plane
 #else
@@ -585,6 +766,15 @@ namespace OBALFramework
   } // END SetCameraMatrices()
 
 
+    /****************************************************************************/
+    /*!
+    \brief
+      Draws DefaultText objects
+
+    \return
+    N/A
+    */
+    /****************************************************************************/
   void Graphics::DrawDefaultTexts()
   {
     // Draw all active DefaultText objects
@@ -595,6 +785,16 @@ namespace OBALFramework
     }
 
   }
+
+  /****************************************************************************/
+  /*!
+  \brief
+    Draws HUDSprite objects onto the screen
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::DrawHUDSprites()
   {
     if (pSprite)
@@ -626,6 +826,16 @@ namespace OBALFramework
       OutputDebugStringA("HUDSprite objects cannot be drawn.\n");
     }
   }
+
+  /****************************************************************************/
+  /*!
+  \brief
+    Draws Mesh Sprite objects in the world space.
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::DrawSprites()
   {
     if (pDevice)
@@ -654,6 +864,16 @@ namespace OBALFramework
       OutputDebugStringA("Sprite objects cannot be drawn.\n");
     }
   }
+
+  /****************************************************************************/
+  /*!
+  \brief
+    Draws AnimatableSprite objects on the screen
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::DrawAnimatableSprites()
   {
     if (pDevice && pSprite)
@@ -690,6 +910,16 @@ namespace OBALFramework
       OutputDebugStringA("Sprite objects cannot be drawn.\n");
     }
   }
+
+  /****************************************************************************/
+  /*!
+  \brief
+    Draws BackBufferSurfaceSprite objects onto the back buffer
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::DrawBackBufferSurfaceSprites()
   {
     if (pDevice)
@@ -726,6 +956,15 @@ namespace OBALFramework
     }
   }
 
+  /****************************************************************************/
+  /*!
+  \brief
+    Tells light objects to set themselves
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::DrawDirectLights()
   {
     ObjectLinkList<DirectLight>::iterator it = DirectLightList.begin();
@@ -737,6 +976,15 @@ namespace OBALFramework
 
 
   //Load all the textures we need.
+  /****************************************************************************/
+  /*!
+  \brief
+    Initializes the vertex buffer and loads all textures
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::LoadAssets()
   {
     // Initialize Graphics (Vertices and what not)
@@ -751,11 +999,33 @@ namespace OBALFramework
     LoadTexture("assets\\SquareBordered.png", 1, 1, 1);
     LoadTexture("assets\\woodfloor.bmp", 1, 1, 1);
     LoadTexture("assets\\AnimationTest.png", 4, 1, 1);
+    LoadTexture("assets\\PabloRunAnimation.png", 3, 1, 12);
     LoadSpriteSource("assets\\default.bmp", 1, 1, 1);
 
   } // END LoadAssets()
 
   
+  /****************************************************************************/
+  /*!
+  \brief
+    Finds images and creates Texture Sources with them
+
+  \param filename
+    The name of the file
+
+  \param framesperrow
+    The number of frames on each row
+
+  \param numofrows
+    The number of rows in the texture image
+
+  \param framerate
+    The number of frames swapped per second
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::LoadTexture(const std::string& filename, unsigned int framesperrow, unsigned int numofrows, 
                               unsigned int framerate)
   {
@@ -815,6 +1085,28 @@ namespace OBALFramework
     //pDevice->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
 
   } // END LoadTexture()
+
+  /****************************************************************************/
+  /*!
+  \brief
+    Finds images and creates surfaces with them 
+
+  \param filename
+    The name of the image file
+
+  \param framesperrow
+    The number of frames on each row
+
+  \param numofrows
+    The number of rows in the texture image
+
+  \param framerate
+    The number of frames swapped per second
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   void Graphics::LoadSpriteSource(const std::string& filename, unsigned int framesperrow, unsigned int numofrows, 
                                     unsigned int framerate)
   {
@@ -881,6 +1173,18 @@ namespace OBALFramework
   }
 
 
+  /****************************************************************************/
+  /*!
+  \brief
+    Converts a position in the 3D space into screen coordinates
+
+  \param point3D
+    The point in 3D space to be converted
+
+  \return
+  N/A
+  */
+  /****************************************************************************/
   Vec2 Graphics::WorldPositontoScreenPosition(Vec3 point3D)
   {
     Mat4 vpmat;
@@ -898,6 +1202,19 @@ namespace OBALFramework
     return Vec2((float)winX, (float)winY);
   }
   
+
+  /****************************************************************************/
+  /*!
+  \brief
+    Gets and returns a texture source that has been created.
+
+  \param texture
+    The name of the texture to search for.
+
+  \return
+    Returns a texture source.  If the Texture source cannot be found, returns NULL.
+  */
+  /****************************************************************************/
   TextureSource* Graphics::GetTextureSource(std::string texture)
   {
     TextureMap::iterator it = TextureSources.find(texture);
@@ -906,6 +1223,19 @@ namespace OBALFramework
     else
       return NULL;
   } // END GetTexture()
+
+  /****************************************************************************/
+  /*!
+  \brief
+    Gets and returns a surface source that has been created.
+
+  \param spritesource
+    The name of the surface to search for.
+
+  \return
+    Returns a surface source.  If the surface source cannot be found, returns NULL.
+  */
+  /****************************************************************************/
   SpriteSource* Graphics::GetSpriteSource(std::string spritesource)
   {
     SurfaceMap::iterator it = SpriteSources.find(spritesource);
@@ -917,7 +1247,16 @@ namespace OBALFramework
   
 
 
-  /// *****CLEANUP*****
+  /*****CLEANUP*****/
+  /****************************************************************************/
+  /*!
+  \brief
+    Releases all DirectX devices and interfaces
+
+  \return
+    N/A
+  */
+  /****************************************************************************/
   void Graphics::ShutDownD3D(void)
   {
     OutputDebugStringA("CLEANING: Direct3D\n");
@@ -934,7 +1273,16 @@ namespace OBALFramework
   /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+  /****************************************************************************/
+  /*!
+  \brief
+    A hack of a debug drawing.  Every frame it creates a DefaultText object
+      that outputs the current position of the graphic's camera
 
+  \return
+    N/A
+  */
+  /****************************************************************************/
   void Graphics::Debug_TrackCamera()
   {
     /*

@@ -1,0 +1,65 @@
+﻿  AnimatableSprite.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  BackBufferSurfaceSprite.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Body.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Camera.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  CameraController.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Collision.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  DebugDraw.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  DirectLight.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  EngineProofPresentationObject.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Factory.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  FilePath.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  GameObjectComposition.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  HUDSprite.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  InputManager.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  jsoncpp.cpp
+  MessageRecipientList.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  OBALCore.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  DefaultText.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Graphics.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Orientation.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Compiling...
+  Particle.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\Particle.h(10): fatal error C1083: Cannot open include file: 'd3dx9tex.h': No such file or directory
+  ParticleEmitter.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\ParticleEmitter.h(9): fatal error C1083: Cannot open include file: 'd3dx9tex.h': No such file or directory
+  ParticleManager.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\ParticleEmitter.h(9): fatal error C1083: Cannot open include file: 'd3dx9tex.h': No such file or directory
+  Physics.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Resolution.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Serialize.cpp
+  Sprite.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  SpriteSource.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  TextureSource.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Transform.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  VMath.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\VMath.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  WindowsSystem.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  WinMain.cpp
+c:\users\jullian\documents\github\gameengine\portadroid_engine\DirectXIncludes.h(4): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory

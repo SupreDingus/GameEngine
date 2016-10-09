@@ -9,6 +9,11 @@ namespace OBALFramework
     OutputDebugStringA("Default 'Camera' Component Created.\n");
     CameraLookAt = Vec3(0.0f, 0.0f, 0.0f);
     CameraUpDirection = Vec3(0.0f, 1.0f, 0.0f);
+
+    FieldofView = 45.0f;
+    NearPlane = 0.5f;
+    FarPlane = 1000.0f;
+    OrthoProjSize = 18.0f;
   }
   Camera::~Camera()
   {

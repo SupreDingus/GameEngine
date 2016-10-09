@@ -62,6 +62,9 @@
     <Filter Include="Third-Party">
       <UniqueIdentifier>{653d0b5a-f3e8-46e4-a1aa-6496908c54f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\EngineProofComponent">
+      <UniqueIdentifier>{3a53ae81-a291-4882-be16-1d47522546c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -159,6 +162,12 @@
     </ClCompile>
     <ClCompile Include="json\jsoncpp.cpp">
       <Filter>Third-Party</Filter>
+    </ClCompile>
+    <ClCompile Include="Serializer.cpp">
+      <Filter>Systems\Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineProofPresentationObject.cpp">
+      <Filter>Components\EngineProofComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +319,15 @@
     </ClInclude>
     <ClInclude Include="json\json-forwards.h">
       <Filter>Third-Party</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineProofPresentationObject.h">
+      <Filter>Components\EngineProofComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializable.h">
+      <Filter>Systems\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializer.h">
+      <Filter>Systems\Serialization</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

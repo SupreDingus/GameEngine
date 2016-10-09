@@ -10,6 +10,7 @@
 //#include <Vector>
 
 #define USE_RECIPIENTLIST 0
+#define TIME_DIVIDEND 1000.0f
 
 namespace OBALFramework
 {
@@ -138,7 +139,7 @@ namespace OBALFramework
       //Get the current time in milliseconds
       unsigned currenttime = timeGetTime();
       //Convert it to the time passed since the last frame (in seconds)
-      float dt = (currenttime - _LastUpTime) / 1000.0f;
+      float dt = (currenttime - _LastUpTime) / TIME_DIVIDEND;
       //Update when the last update started
       _LastUpTime = currenttime;
 

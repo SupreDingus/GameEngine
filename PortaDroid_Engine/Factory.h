@@ -51,6 +51,7 @@ namespace OBALFramework
       GOC * CreateCamera();
       GOC * CreateSprite();
       GOC * CreateAnimatableSprite();
+      GOC * CreateBackBufferSprite();
       GOC * CreateDefaultText();
 
       // Create the object and give it an ID

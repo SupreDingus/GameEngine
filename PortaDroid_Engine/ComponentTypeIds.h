@@ -34,6 +34,10 @@ namespace OBALFramework
     //Game Components
     ///
 
+
+
+    CT_EngineProofPresentationObject,
+
     //Maximum ALWAYS
     CT_MaxComponents
   };

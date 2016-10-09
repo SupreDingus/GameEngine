@@ -1,3 +1,4 @@
+/* DEPRECATED */
 #include "Serialize.h"
 
 Serializer::Serializer(std::string fileName_)
