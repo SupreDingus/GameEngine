@@ -78,11 +78,7 @@ namespace OBALFramework
     // Push this sprite on the Graphics system's spritelist for drawing in the future
     GRAPHICS->ParticleSystemList.push_back(this);
 
-    //TESTING JSONCPP
-    fileName = "wew.txt";
-    Serializer yup(fileName);
-    
-    //yup.Send(currPos);
+    TypeId = CT_Emitter;
   }
 
   void Emitter::AddTexture(std::string textureName)

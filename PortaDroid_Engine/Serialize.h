@@ -10,7 +10,7 @@ public:
   Serializer(std::string fileName);
   ~Serializer();
 
-  //void Send(Json::Value val);
+  void Send(Json::Value val);
   bool Receive(Json::Value val);
 
   //template<typename T> void Send(T value);

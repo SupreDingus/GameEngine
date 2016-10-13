@@ -41,6 +41,8 @@ This cpp file contains the Graphics ISystem function definitions.
 #include "VertexTypes.h"
 #include "FilePath.h"
 
+#include "LevelGen.h"
+
 // Testing Messaging
 #include "WindowsSystem.h"  //For Messaging stuff
 #include "InputManager.h"
@@ -354,7 +356,12 @@ namespace OBALFramework
     GOC * presentationObject = FACTORY->CreateEmptyObject(true);
     FACTORY->GiveComponentToObject("EngineProofPresentationObject", presentationObject);
 
+    GOC* test = FACTORY->CreateEmptyObject(true);
+    FACTORY->GiveComponentToObject("SoundEmitter", test);
 
+    LevelGen whoa;
+    whoa.CreateEmptyLevel();
+    whoa.LoadLevel("empty.txt");
   } // END initD3D()
 
 
@@ -587,10 +594,6 @@ namespace OBALFramework
     //Begin the scene.  If successful, draw the next frame
     if (SUCCEEDED(pDevice->BeginScene()))
     {
-      if (INPUTMGR->KeyIsDown(KEY_I))
-      {
-        CurrentCamera->has(Transform)->Position.y += 1;
-      }
 
       // Draw Everything
       DrawWorld();
@@ -1303,7 +1306,7 @@ namespace OBALFramework
     thang = std::to_string(thing.x);
     OutputDebugStringA(thang.c_str());
     OutputDebugStringA(",");
-    thang = std::to_string(thing.y);
+    thang = std::to_string(thing.y);k
     OutputDebugStringA(thang.c_str());
     OutputDebugStringA(")\n");
     */

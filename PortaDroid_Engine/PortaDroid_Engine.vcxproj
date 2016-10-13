@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>C:\Program Files %28x86%29\Microsoft Visual Studio 14.0\DIA SDK\include;C:\Users\Jullian\OneDrive\Personal Projects\Summer Game - PortaDroid\Engine Solution\PortaDroid_Engine Solution\PortaDroid_Engine\json;$(IncludePath)</IncludePath>
     <SourcePath>$(SourcePath)</SourcePath>
+    <LibraryPath>C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -92,12 +93,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api\inc;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dxerr.lib;d3dx9d.lib;d3d9.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>fmodex_vc.lib;dxerr.lib;d3dx9d.lib;d3d9.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -165,8 +166,10 @@
     <ClCompile Include="FilePath.cpp" />
     <ClCompile Include="GameObjectComposition.cpp" />
     <ClCompile Include="HUDSprite.cpp" />
+    <ClCompile Include="ImguiBase.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="json\jsoncpp.cpp" />
+    <ClCompile Include="LevelGen.cpp" />
     <ClCompile Include="MessageRecipientList.cpp" />
     <ClCompile Include="OBALCore.cpp" />
     <ClCompile Include="DefaultText.cpp" />
@@ -176,9 +179,12 @@
     <ClCompile Include="ParticleEmitter.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="Resolution.cpp" />
     <ClCompile Include="Serialize.cpp" />
     <ClCompile Include="Serializer.cpp" />
+    <ClCompile Include="SoundEmitter.cpp" />
+    <ClCompile Include="SoundSystem.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteSource.cpp" />
     <ClCompile Include="TextureSource.cpp" />
@@ -209,10 +215,12 @@
     <ClInclude Include="Heirarchy.h" />
     <ClInclude Include="HUDSprite.h" />
     <ClInclude Include="DirectLight.h" />
+    <ClInclude Include="ImguiBase.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="json\json-forwards.h" />
     <ClInclude Include="json\json.h" />
     <ClInclude Include="KeyDefines.h" />
+    <ClInclude Include="LevelGen.h" />
     <ClInclude Include="MessageRecipientList.h" />
     <ClInclude Include="MessagingTransmitter.h" />
     <ClInclude Include="ObjectLinkedList.h" />
@@ -221,10 +229,13 @@
     <ClInclude Include="ParticleEmitter.h" />
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="Physics.h" />
+    <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Resolution.h" />
     <ClInclude Include="Serializable.h" />
     <ClInclude Include="Serialize.h" />
     <ClInclude Include="Serializer.h" />
+    <ClInclude Include="SoundEmitter.h" />
+    <ClInclude Include="SoundSystem.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteSource.h" />
     <ClInclude Include="TextureSource.h" />
