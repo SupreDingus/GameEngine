@@ -1,8 +1,42 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// TODO:
-// ---Set up SpriteSources so they are drawn similarly to how textures are drawn (ObjectLinkedList)
-// ---
-///////////////////////////////////////////////////////////////////////////////////////////////////
+/*****************************************************************************/
+/*!
+\file   Graphics.h
+\author Jullian Hyatt
+\par    email: jullian.h\@digipen.edu
+\par    DigiPen login: jullian.h
+\par    Course: GAM200
+\date   10/9/2016
+\brief
+This .h file contains the Graphics Class Declaration and a few member function definitions.
+
+
+\par   Functions include:
++        Graphics
++        ~Graphics
++        GetName
++        Initialize
++        Init_Graphics
++        SetWindowProperties
++        GetAdapterInfo
++        ThrowMessage
++        Update
++        RegisterAppropriateComponents
++        DrawWorld
++        SetCameraMatrices
++        DrawDefaultTexts
++        DrawHUDSprites
++        DrawSprites
++        DrawAnimatableSprites
++        DrawBackBufferSurfaceSprites
++        DrawDirectLights
++        LoadTexture
++        LoadSpriteSource
++        WorldPositontoScreenPosition
++        ShutDownD3D
++        Debug_TrackCamera
+
+*/
+/*****************************************************************************/
 #pragma once
 
 #include "EngineBases.h"

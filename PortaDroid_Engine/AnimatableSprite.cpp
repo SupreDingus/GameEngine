@@ -105,14 +105,14 @@ namespace OBALFramework
       else
       {
         // If the next frame isn't the last in the row, set the current frame to the next frame
-        if (CurrentFrame < SpriteTextureAsset->FramesPerRow)
+        if (CurrentFrame < FramesperRow)
         {
           CurrentFrame++;
         }
         else
         {
           // If the next row isn't the last , set the current frame to the first frame of the next row
-          if (CurrentRow < SpriteTextureAsset->NumberofRows)
+          if (CurrentRow < NumberofRows)
           {
             CurrentFrame = 1;
             CurrentRow++;
@@ -136,6 +136,7 @@ namespace OBALFramework
   {
     // Texture being used is 64 by 64:
     Vec2 spriteCenter2D((float)SpriteTextureAsset->FrameSizeX / 2, (float)SpriteTextureAsset->FrameSizeY / 2);
+    //Vec2 spriteCenter2D((float)((SpriteTextureAsset->FrameSizeX / 2) + (SpriteTextureAsset->FrameSizeX * (CurrentFrame - 1))), (float)((SpriteTextureAsset->FrameSizeY / 2) + (SpriteTextureAsset->FrameSizeY * (CurrentRow - 1))));
     Vec3 spriteCenter3D(spriteCenter2D.x, spriteCenter2D.y, 0.0f);
 
     // Screen position of the sprite

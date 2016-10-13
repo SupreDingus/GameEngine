@@ -17,8 +17,8 @@ namespace OBALFramework
   /*default constructor for Body*/
   Body::Body()
   {
-    Position = Vec3(0, 0, 1);
-    PrevPosition = Vec3(0, 0, 1);
+    Position = Vec3(0, 0, 0);
+    PrevPosition = Vec3(0, 0, 0);
     Velocity = Vec3(0, 0, 0); 
     Mass = 0.0f;
     InvMass = 0.0f;
@@ -38,8 +38,8 @@ namespace OBALFramework
     float mass, float damping, float fric, float rest, 
     bool isStatic)
   {
-    Position     = Vec3(pos.x, pos.y, 1);
-    PrevPosition = Vec3(pos.x, pos.y, 1);//Vec3(prevPos.x, prevPos.y, 1);
+    Position     = Vec3(pos.x, pos.y, 0);
+    PrevPosition = Vec3(pos.x, pos.y, 0);//Vec3(prevPos.x, prevPos.y, 1);
     Velocity     = Vec3(vel.x, vel.y, 0);
     Acceleration = Vec3(accel.x, accel.y, 0);
 
@@ -85,11 +85,13 @@ namespace OBALFramework
   }
 
   /*Set the object's position*/
+  /*  If you need to set position, just set the objects position from its transform component
   void Body::SetPosition(Vec3 Pos)
   {
     Position = Pos;
     trans->Position = Pos;
   }
+  */
 
   /*Set the object's velocity*/
   void Body::SetVelocity(Vec3 Vel)
@@ -143,6 +145,9 @@ namespace OBALFramework
   /**/
   void Body::Integrate(float dt)
   {
+    // First get the _Owner's Current Position, then proceed with calculations
+    Position = trans->Position;
+
     //Do not integrate static bodies
     if (IsStatic) return;
 

@@ -47,9 +47,9 @@ const WCHAR windowTitle[] = L"Obal Engine";  // the title the window will have a
 //Parameter 4: The manner in which the application's window is to be displayed (not needed).
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-  _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-  //_CrtSetBreakAlloc(185);
-  //_CrtSetBreakAlloc(183);
+  //_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+  //_CrtSetBreakAlloc(215);
+  //_CrtSetBreakAlloc(211);
   //_CrtSetBreakAlloc(181);
   //_CrtSetBreakAlloc(179);
   //_CrtSetBreakAlloc(177);

@@ -11,7 +11,7 @@ namespace OBALFramework
     OutputDebugStringA("Default 'Sprite' Component Created.\n");
     Visible = true;
     VisibilityCulling = false;
-    TextureName = "animationtest.png";
+    TextureName = "squarebordered.png";
     CurrentRow = 0;
     CurrentFrame = 0;
     NumberofRows = 0;
@@ -186,7 +186,7 @@ namespace OBALFramework
     D3DXMatrixRotationY(&matRotateY, D3DXToRadian(transform->Rotation.y));
     D3DXMatrixRotationZ(&matRotateZ, D3DXToRadian(transform->Rotation.z));
     D3DXMatrixScaling(&matScale, transform->Scale.x, transform->Scale.y, transform->Scale.z);
-    D3DXMatrixScaling(&matScale, worldscale, worldscale, worldscale);
+    //D3DXMatrixScaling(&matScale, worldscale, worldscale, worldscale);
     D3DXMatrixTranslation(&matTranslate, transform->Position.x, transform->Position.y, transform->Position.z);
 
     matTranslate = matRotateX * matRotateY * matRotateZ * matScale * matTranslate;

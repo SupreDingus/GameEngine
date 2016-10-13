@@ -23,6 +23,7 @@
 
 #define PI      3.1415926535897932384626433832795
 #define EPSILON 0.0001
+#define GRAVITY 9.8f
 
 namespace OBALFramework
 {
@@ -59,7 +60,7 @@ namespace OBALFramework
     PHYSICS = this;
     DebugDrawingActive = false;
     TimeAccumulation = 0.0f;
-    Gravity = Vec3(0, -400, 0);
+    Gravity = Vec3(0, -GRAVITY, 0);
     MaxVelocity = 1000;
     MaxVelocitySq = MaxVelocity*MaxVelocity;
     PenetrationEpsilon = 0.2f;
@@ -78,7 +79,7 @@ namespace OBALFramework
   {
     //ErrorIf(PHYSICS != NULL, "Physics already initialized");
     PHYSICS = this;
-    Gravity = Vec3(0.0f, -400.0f, 0.0f);
+    Gravity = Vec3(0.0f, -GRAVITY, 0.0f);
 
     //Orientation.x = orientation.x;
     //Orientation.y = orientation.y;
@@ -95,8 +96,8 @@ namespace OBALFramework
   {
     OutputDebugStringA("Initializing 'Physics' Component.\n");
     
-    testObjWithMyComp = FACTORY->CreateSprite();
-    FACTORY->GiveComponentToObject("Body", testObjWithMyComp);
+    //testObjWithMyComp = FACTORY->CreateSprite();
+    //FACTORY->GiveComponentToObject("Body", testObjWithMyComp);
   }
 
   /*returns distance to the closest object in the ray*/

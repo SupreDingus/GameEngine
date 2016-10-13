@@ -16,8 +16,8 @@ namespace OBALFramework
     FrameSizeX = SourceSizeX / FramesPerRow;
     FrameSizeY = SourceSizeY / NumberofRows;
 
-    OriginX = (int)SourceSizeX / 2;
-    OriginY = (int)SourceSizeY / 2;
+    OriginX = (int)SourceSizeX;// / 2;
+    OriginY = (int)SourceSizeY;// / 2;
 
     if (Texture != NULL)
       OutputDebugStringA("DEFAULT Texture Source is something.\n");

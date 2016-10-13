@@ -38,6 +38,7 @@ namespace OBALFramework
     AddKeyStateObject(KEY_D);
     /*'W' Key*/
     AddKeyStateObject(KEY_W);
+
     /*'SPACE' Key*/
     AddKeyStateObject(VK_SPACE);
     /*'LSHIFT' Key*/
@@ -52,6 +53,9 @@ namespace OBALFramework
     AddKeyStateObject(VK_TAB);
     /*'ESC' Key*/
     AddKeyStateObject(VK_ESCAPE);
+    /*'ENTER' Key*/
+    AddKeyStateObject(VK_RETURN);
+
     /*'UP' Key*/
     AddKeyStateObject(VK_UP);
     /*'DOWN' Key*/
@@ -60,6 +64,18 @@ namespace OBALFramework
     AddKeyStateObject(VK_LEFT);
     /*'RIGHT' Key*/
     AddKeyStateObject(VK_RIGHT);
+
+    /*Keys 0 - 9*/
+    AddKeyStateObject(KEY_0);
+    AddKeyStateObject(KEY_1);
+    AddKeyStateObject(KEY_2);
+    AddKeyStateObject(KEY_3);
+    AddKeyStateObject(KEY_4);
+    AddKeyStateObject(KEY_5);
+    AddKeyStateObject(KEY_6);
+    AddKeyStateObject(KEY_7);
+    AddKeyStateObject(KEY_8);
+    AddKeyStateObject(KEY_9);
     
   }
 

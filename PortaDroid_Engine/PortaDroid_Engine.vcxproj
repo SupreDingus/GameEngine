@@ -160,6 +160,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="DebugDraw.cpp" />
     <ClCompile Include="DirectLight.cpp" />
+    <ClCompile Include="EngineProofPresentationObject.cpp" />
     <ClCompile Include="Factory.cpp" />
     <ClCompile Include="FilePath.cpp" />
     <ClCompile Include="GameObjectComposition.cpp" />
@@ -177,6 +178,7 @@
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="Resolution.cpp" />
     <ClCompile Include="Serialize.cpp" />
+    <ClCompile Include="Serializer.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteSource.cpp" />
     <ClCompile Include="TextureSource.cpp" />
@@ -200,6 +202,7 @@
     <ClInclude Include="ComponentTypeIds.h" />
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="DefaultText.h" />
+    <ClInclude Include="EngineProofPresentationObject.h" />
     <ClInclude Include="Factory.h" />
     <ClInclude Include="FilePath.h" />
     <ClInclude Include="GameObjectComposition.h" />
@@ -219,7 +222,9 @@
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="Resolution.h" />
+    <ClInclude Include="Serializable.h" />
     <ClInclude Include="Serialize.h" />
+    <ClInclude Include="Serializer.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteSource.h" />
     <ClInclude Include="TextureSource.h" />

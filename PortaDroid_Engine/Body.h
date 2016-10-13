@@ -32,7 +32,7 @@ namespace OBALFramework
 
     void AddForce(Vec3 force);
     void Integrate(float dt);
-    void SetPosition(Vec3 Pos);
+    //void SetPosition(Vec3 Pos);
     void SetVelocity(Vec3 Vel);
     void UpdatePosition();
 
