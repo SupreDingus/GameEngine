@@ -65,6 +65,12 @@
     <Filter Include="Components\EngineProofComponent">
       <UniqueIdentifier>{3a53ae81-a291-4882-be16-1d47522546c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Systems\Sound">
+      <UniqueIdentifier>{a8716b7c-559b-4744-86bb-fcb15be4dde7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\Serialization\IMGUI">
+      <UniqueIdentifier>{8f10c145-ab5f-47fb-88e9-8ec4cd433bee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics.cpp">
@@ -168,6 +174,21 @@
     </ClCompile>
     <ClCompile Include="EngineProofPresentationObject.cpp">
       <Filter>Components\EngineProofComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelGen.cpp">
+      <Filter>Systems\Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundSystem.cpp">
+      <Filter>Systems\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEmitter.cpp">
+      <Filter>Systems\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="ImguiBase.cpp">
+      <Filter>Systems\Serialization\IMGUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -328,6 +349,21 @@
     </ClInclude>
     <ClInclude Include="Serializer.h">
       <Filter>Systems\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelGen.h">
+      <Filter>Systems\Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundSystem.h">
+      <Filter>Systems\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEmitter.h">
+      <Filter>Systems\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="ImguiBase.h">
+      <Filter>Systems\Serialization\IMGUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

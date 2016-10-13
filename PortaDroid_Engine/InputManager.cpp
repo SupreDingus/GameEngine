@@ -65,6 +65,12 @@ namespace OBALFramework
     /*'RIGHT' Key*/
     AddKeyStateObject(VK_RIGHT);
 
+    //Mark's temporary stuff.
+    AddKeyStateObject(KEY_L);
+    AddKeyStateObject(KEY_J);
+    AddKeyStateObject(KEY_K);
+    AddKeyStateObject(KEY_I);
+
     /*Keys 0 - 9*/
     AddKeyStateObject(KEY_0);
     AddKeyStateObject(KEY_1);

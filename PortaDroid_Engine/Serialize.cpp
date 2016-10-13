@@ -12,14 +12,14 @@ Serializer::~Serializer()
     fb.close();
 }
 
-/*void Serializer::Send(Json::Value value)
+void Serializer::Send(Json::Value value)
 {
   fb.open(fileName, std::ios::out);
   std::ostream os(&fb);
   writer.write(os, value);
 }
 
-template<typename T>
+/*template<typename T>
 void Serializer::Send(T value)
 {
   fb.open(fileName, std::ios::out);

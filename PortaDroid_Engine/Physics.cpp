@@ -246,6 +246,7 @@ namespace OBALFramework
     //COMPONENT REGISTRATION
     RegisterComponent(Body);
     RegisterComponent(Orientation);
+    RegisterComponent(PlayerController);
   }
 
   /**/

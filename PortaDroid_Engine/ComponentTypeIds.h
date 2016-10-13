@@ -30,9 +30,11 @@ namespace OBALFramework
 
     //Game Logic
     CT_Controller,
+    CT_PlayerController,
 
     //Game Components
     ///
+    CT_SoundEmitter,
 
 
 
